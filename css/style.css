@@ -973,3 +973,356 @@ html {
         font-size: 0.8rem;
     }
 }
+
+/* Fasilitas: Force 3 columns x multiple rows at specific breakpoints (768, 480, 360) */
+@media (max-width: 768px) {
+    .fasilitas-grid {
+        /* Force 3 columns so the grid becomes 3xN (rows will wrap as needed) */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem; /* Slightly smaller gap to fit columns */
+        padding: 0 10px; /* Reduce horizontal padding on smaller screens */
+    }
+
+    .fasilitas-item {
+        padding: 1rem; /* Slightly smaller padding to avoid overflow */
+        font-size: 0.95rem; /* Adjust font-size for better fit */
+    }
+    /* Shrink icon and copy inside fasilitas items at 768px */
+    .fasilitas-item i {
+        font-size: 1.6rem;
+    }
+    .fasilitas-item p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fasilitas-grid {
+        grid-template-columns: repeat(3, 1fr); /* keep 3 columns */
+        gap: 0.9rem;
+        padding: 0 8px;
+    }
+
+    .fasilitas-item {
+        padding: 0.9rem;
+        font-size: 0.92rem;
+    }
+    /* Shrink icon and copy inside fasilitas items at 480px */
+    .fasilitas-item i {
+        font-size: 1.3rem;
+    }
+    .fasilitas-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .fasilitas-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        padding: 0 6px;
+    }
+
+    .fasilitas-item {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    /* Shrink icon and copy inside fasilitas items at 360px */
+    .fasilitas-item i {
+        font-size: 1.1rem;
+    }
+    .fasilitas-item p {
+        font-size: 0.78rem;
+    }
+}
+
+/* Hero responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 0 2.5rem; /* reduce vertical padding */
+    }
+    .hero h1 {
+        font-size: 2.4rem; /* smaller heading */
+        margin-bottom: 1.4rem;
+    }
+    .hero-info {
+        gap: 10px;
+        margin-bottom: 1.6rem;
+    }
+    .info-box {
+        padding: 0.9rem 1.6rem;
+        font-size: 1rem;
+    }
+    .hero-image {
+        width: 90%;
+        max-width: 700px;
+    }
+    /* Only make hero-info (the three boxes) into a 3-column grid here */
+    .hero .hero-content > .hero-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto 1rem;
+        padding: 0 24px; /* spacing between boxes and screen edges */
+    }
+    .hero .hero-content > .hero-info .info-box { padding: 0.9rem 1rem; font-size: 0.95rem; width: 100%; box-sizing: border-box; }
+    .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 5rem 0 1.8rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .hero-info {
+        gap: 8px;
+        margin-bottom: 1.2rem;
+    }
+    .info-box {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    .hero-image {
+        width: 95%;
+        max-width: 580px;
+    }
+    /* Only make hero-info (the three boxes) into a 3-column grid here */
+    .hero .hero-content > .hero-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto 0.6rem;
+        padding: 0 16px; /* spacing */
+    }
+    .hero .hero-content > .hero-info .info-box { padding: 0.7rem 0.9rem; font-size: 0.9rem; width: 100%; box-sizing: border-box; }
+    .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        padding: 4.2rem 0 1.2rem;
+    }
+    .hero h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    .hero-info {
+        gap: 6px;
+        margin-bottom: 0.9rem;
+    }
+    .info-box {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .hero-image {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 14px;
+    }
+    /* Only make hero-info (the three boxes) into a 3-column grid here */
+    .hero .hero-content > .hero-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.4rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto 0.6rem;
+        padding: 0 10px; /* spacing */
+    }
+    .hero .hero-content > .hero-info .info-box { padding: 0.5rem 0.7rem; font-size: 0.78rem; width: 100%; box-sizing: border-box; }
+
+    /* Make text inside the info-box slightly smaller and better balanced */
+    .hero .hero-content > .hero-info .info-box { line-height: 1.15; }
+    .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
+}
+
+/* Responsive grid for Kantor section: align contact items and CTA in a 3-column row on small widths */
+@media (max-width: 768px) {
+    .kantor {
+        padding: 6.5rem 0 3rem; /* slightly smaller vertical spacing */
+    }
+
+    .kantor-overlay {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 12px;
+        align-items: center;
+        justify-items: center;
+        padding: 2rem 1rem; /* more compact padding */
+        width: 100%;
+        margin-top: -8rem; /* move overlay up a bit less on smaller screens */
+    }
+
+    /* Logo centered at the top column */
+    .kantor-logo {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: 140px;
+        margin: 0; /* avoid large spacing */
+        padding: 12px;
+    }
+
+    .kantor h2 {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .kantor p {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    /* Kontak info (address + WhatsApp) become 2-column grid; CTA will be below */
+    .kontak-info {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 10px; /* keep some spacing */
+    }
+
+    .kontak-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 10px 12px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 420px;
+        box-sizing: border-box;
+    }
+    .kontak-item i { font-size: 1.2rem; color: #cb1515; margin-right: 8px; }
+    .kontak-item p { font-size: 1rem; margin: 0; }
+
+    /* CTA below contact boxes, centered */
+    .btn-lihat {
+        grid-column: 1 / -1;
+        grid-row: 5;
+        justify-self: center;
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        border-radius: 12px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kantor {
+        padding: 5.5rem 0 2.2rem;
+    }
+
+    .kantor-overlay {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 1.2rem 8px;
+        margin-top: -7rem;
+    }
+
+    .kantor-logo {
+        grid-column: 1 / -1;
+        width: 120px;
+    }
+
+    .kantor h2 {
+        font-size: 1.8rem;
+    }
+
+    .kantor p {
+        font-size: 0.95rem;
+    }
+
+    .kontak-info {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    .kontak-item {
+        padding: 8px 10px;
+        font-size: 0.95rem;
+    }
+    .kontak-item i { font-size: 1.05rem; }
+    .kontak-item p { font-size: 0.95rem; }
+
+    .btn-lihat {
+        padding: 0.8rem 1.6rem;
+        font-size: 0.95rem;
+        grid-row: 5;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .kantor {
+        padding: 4.5rem 0 1.5rem;
+    }
+
+    .kantor-overlay {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 10px;
+        margin-top: -6rem;
+    }
+
+    .kantor-logo {
+        grid-column: 1 / -1;
+        width: 110px;
+    }
+
+    .kantor h2 {
+        font-size: 1.4rem;
+    }
+
+    .kantor p {
+        font-size: 0.9rem;
+    }
+
+    .kontak-info {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 0 6px;
+    }
+
+    .kontak-item {
+        padding: 6px 8px;
+        font-size: 0.82rem;
+    }
+    .kontak-item i { font-size: 0.95rem; }
+    .kontak-item p { font-size: 0.82rem; }
+
+    .btn-lihat {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        grid-row: 5;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
