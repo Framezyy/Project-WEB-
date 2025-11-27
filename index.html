@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D'Fanisa Residence - Fachri Property Group</title>
+    <title>Fachri Properti Group</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#fasilitas" class="nav-link">Fasilitas</a>
-            <a href="#lokasi" class="nav-link">Lokasi</a>
-            <a href="#testimoni" class="nav-link">Testimoni</a>
-            <a href="#kontak" class="nav-link">Kontak</a>
-        </div>
-    </nav>
 
-    <!-- Kantor Section - PALING ATAS -->
+<body>    <!-- Kantor Section - PALING ATAS -->
     <section class="kantor">
         <div class="kantor-overlay">
-            <!-- Tambahkan logo di sini -->
             <img src="images/logo.png" alt="Fachri Property Group Logo" class="kantor-logo">
             
             <h2>KANTOR <span>PEMASARAN</span> PERUMAHAN</h2>
-            <p>"Beli Rumah Harus Fachri Property Group"</p>
+            <p>"Beli Rumah Harus Fachri Properti Group"</p>
             <div class="kontak-info">
                 <div class="kontak-item">
                     <i class="fas fa-map-marker-alt"></i>
@@ -43,7 +31,7 @@
         </div>
     </section>
 
-    <!-- Hero Section -->
+    <!-- Hero Section dengan Slider - D'Fanisa Residence -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>D'Fanisa Residence</h1>
@@ -52,9 +40,50 @@
                 <div class="info-box red">TIPE 50 CLUSTER</div>
                 <div class="info-box gold">TOTAL 147 UNIT</div>
             </div>
-            <img src="images/dfanisa-hero.jpg" alt="D'Fanisa Residence" class="hero-image">
+            
+            <!-- Image Slider -->
+            <div class="image-slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="images/gambar1.jpg" alt="Tipe A - D'Fanisa Residence">
+                        <div class="slide-info">
+                            <h3>Tipe A - Standard</h3>
+                            <p>2 Kamar Tidur, 1 Kamar Mandi, Luas Tanah 9x14m</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/gambar-1.jpg" alt="Tipe B - D'Fanisa Residence">
+                        <div class="slide-info">
+                            <h3>Tipe B - Premium</h3>
+                            <p>2 Kamar Tidur, 1 Kamar Mandi, Luas Tanah 9x16m</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/gambar-2.jpg" alt="Tipe C - D'Fanisa Residence">
+                        <div class="slide-info">
+                            <h3>Tipe C - Deluxe</h3>
+                            <p>2 Kamar Tidur, 1 Kamar Mandi, Luas Tanah 9x19m</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-btn prev-btn" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next-btn" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
         </div>
     </section>
+
+    
 
     <!-- Fasilitas Section -->
     <section id="fasilitas" class="fasilitas">
@@ -110,7 +139,7 @@
     </section>
 
     <!-- Lokasi Section -->
-    <section class="lokasi">
+    <section id="lokasi" class="lokasi">
         <div class="container">
             <h2>LOKASI STRATEGIS</h2>
             <ul class="lokasi-list">
@@ -126,6 +155,7 @@
             </a>
         </div>
     </section>
+    
 
     <!-- Testimoni Section -->
     <section id="testimoni" class="testimoni">
@@ -133,7 +163,7 @@
             <h2>TESTIMONI MEREKA</h2>
             <div class="video-container">
                 <iframe 
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                    src="https://www.youtube.com/embed/1_j_Qw-SeWs"  
                     title="Testimoni D'Fanisa Residence" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -143,90 +173,59 @@
         </div>
     </section>
 
-    <!-- Footer dengan Map -->
+    <!-- Footer dengan Kontak -->
     <footer id="kontak" class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>GET IN TOUCH WITH US</h3>
-                    <h4>KANTOR PEMASARAN</h4>
-                    <p><strong>Alamat:</strong><br>
-                    Fachri Property Group<br>
-                    Telepon Res Offiec: Lihat di C2<br>
-                    Jl. Ampera No.22, RT.003/ RW.015 Kel.Sei Raya,<br>
-                    Kec.Pontianak Kota<br>
-                    HP: 0852-0511- 5191</p>
+                <!-- Kolom 1: Logo & Deskripsi -->
+                <div class="footer-col">
+                    <img src="images/logo.png" alt="Fachri Property Group Logo" class="footer-logo-img">
+                    <p class="footer-desc">
+                        Fachri Properti Group adalah pengembang properti terpercaya yang menghadirkan hunian berkualitas dengan lokasi strategis dan fasilitas lengkap untuk keluarga Indonesia.
+                    </p>
+                </div>
+                
+                <!-- Kolom 2: Alamat & Kontak -->
+                <div class="footer-col">
+                    <h3>Get In Touch</h3>
                     
-                    <p><strong>Kontak</strong><br>
-                    Office: 0561-817-7746<br>
-                    Andri: 0852-0511-5191 (CS1)<br>
-                    Email: fachri@gmail.com</p>
-
-                    <div class="footer-links">
-                        <div class="link-column">
-                            <h4>Relasi Investor</h4>
-                            <ul>
-                                <li>Laporan Tahunan</li>
-                                <li>Laporan Keuangan</li>
-                                <li>Informasi Saham</li>
-                            </ul>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>Jl. Ampera No.22, RT.003/RW.015</p>
+                            <p>Kel. Sei Raya, Kec. Pontianak Kota</p>
+                            <p>Kalimantan Barat 78113</p>
                         </div>
-                        <div class="link-column">
-                            <h4>Keberlangsungan</h4>
-                            <ul>
-                                <li>Afiliasi CSD</li>
-                                <li>Afiliasi GFL</li>
-                            </ul>
-                        </div>
-                        <div class="link-column">
-                            <h4>Produk & Layanan</h4>
-                            <ul>
-                                <li>GWA Realty Yogyakarta</li>
-                                <li>Building Management</li>
-                                <li>Ibiza</li>
-                            </ul>
-                        </div>
-                        <div class="link-column">
-                            <h4>Berita & Acara</h4>
-                            <ul>
-                                <li>Media</li>
-                                <li>E-Magazine</li>
-                            </ul>
-                        </div>
-                        <div class="link-column">
-                            <h4>Perusahaan</h4>
-                            <ul>
-                                <li>Tentang Kami</li>
-                                <li>Proyek Dan Penamlahan</li>
-                                <li>Sertifikat Penghargaan</li>
-                                <li>Hubungi Kami</li>
-                            </ul>
-                        </div>
+                    </div>
+                    
+                    <div class="contact-item-footer">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>0561-817-7746</p>
+                    </div>
+                    
+                    <div class="contact-item-footer">
+                        <i class="fas fa-envelope"></i>
+                        <p>fachri@gmail.com</p>
                     </div>
                 </div>
-                <div class="footer-map">
-                    <!-- Google Maps Embed -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.817203782895!2d109.33771431475392!3d-0.02847999998864286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d58f1a5a5a5a%3A0x1a5a5a5a5a5a5a5a!2sJl.%20Ampera%20No.22%2C%20Pontianak!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0; border-radius: 10px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                
+                <!-- Kolom 3: Link Terkait -->
+                <div class="footer-col">
+                    <h3>Akses Cepat</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#fasilitas">Fasilitas</a></li>
+                        <li><a href="#lokasi">Lokasi</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
+                        <li><a href="#kontak">Kontak Kami</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </footer>
     
-    <!-- Copyright diluar footer container untuk full width -->
-    <div class="copyright">
-        <p>Copyright © 2025 Fachri Property Group</p>
-    </div>
+    
+    
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/6281345708472?text=Halo,%20saya%20ingin%20bertanya%20tentang%20D'Fanisa%20Residence" 
@@ -237,3 +236,360 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
+<style>
+/* ...existing code... */
+
+/* WhatsApp Float Button */
+.wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.wa-float:active {
+    transform: scale(0.95);
+}
+
+.wa-float i {
+    animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: rotate(-10deg);
+    }
+    20%, 40%, 60%, 80% {
+        transform: rotate(10deg);
+    }
+}
+
+/* WhatsApp Float Responsive */
+@media (max-width: 768px) {
+    .wa-float {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wa-float {
+        width: 55px;
+        height: 55px;
+        font-size: 1.8rem;
+        bottom: 18px;
+        right: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .wa-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Unit Section */
+.unit {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.unit h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #2d3436;
+    font-weight: 700;
+}
+
+.unit-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 3rem;
+}
+
+.unit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.unit-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.unit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(196, 30, 58, 0.2);
+    border-color: #c41e3a;
+}
+
+.unit-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.unit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.unit-card:hover .unit-image img {
+    transform: scale(1.1);
+}
+
+.unit-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.4);
+}
+
+.unit-badge.premium {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.unit-badge.deluxe {
+    background: linear-gradient(135deg, #2d3436, #000000);
+}
+
+.unit-content {
+    padding: 2rem;
+}
+
+.unit-content h3 {
+    font-size: 1.6rem;
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.unit-specs {
+    margin-bottom: 1.5rem;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.spec-item:last-child {
+    border-bottom: none;
+}
+
+.spec-item i {
+    color: #c41e3a;
+    font-size: 1.2rem;
+    min-width: 25px;
+}
+
+.spec-item span {
+    color: #636e72;
+    font-size: 0.95rem;
+}
+
+.unit-price {
+    background: linear-gradient(135deg, #f8f9fa, #e8e8e8);
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.price-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #636e72;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #c41e3a;
+}
+
+.btn-unit {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-unit:hover {
+    background: linear-gradient(135deg, #128C7E, #0a6e5a);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-unit i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Unit Responsive */
+@media (max-width: 768px) {
+    .unit {
+        padding: 3.5rem 0;
+    }
+    
+    .unit h2 {
+        font-size: 2.2rem;
+    }
+    
+    .unit-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .unit-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 15px;
+    }
+    
+    .unit-image {
+        height: 220px;
+    }
+    
+    .unit-content {
+        padding: 1.5rem;
+    }
+    
+    .unit-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .spec-item {
+        padding: 0.7rem 0;
+    }
+    
+    .spec-item span {
+        font-size: 0.9rem;
+    }
+    
+    .price {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .unit h2 {
+        font-size: 1.8rem;
+    }
+    
+    .unit-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .unit-image {
+        height: 200px;
+    }
+    
+    .unit-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .spec-item i {
+        font-size: 1.1rem;
+    }
+    
+    .spec-item span {
+        font-size: 0.85rem;
+    }
+    
+    .price {
+        font-size: 1.4rem;
+    }
+    
+    .btn-unit {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .unit-content {
+        padding: 1.2rem;
+    }
+    
+    .unit-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .unit-badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ...existing code... */
