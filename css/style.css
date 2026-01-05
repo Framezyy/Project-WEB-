@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
     background: #f8f9fa;
 }
-
+                                                                                                                                                                                                              
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -24,11 +24,10 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    overflow-x: hidden;
+    padding: 0 20px;    overflow-x: hidden;
 }
 
-/* /* Navbar Styles */
+/* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -36,6 +35,7 @@ html {
     right: 0;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.98);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 15px 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -81,9 +81,10 @@ html {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 4rem;
+    padding: 6rem 0 4rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
-    margin-top: 60px;
+    margin-top: 0;
+    scroll-margin-top: 0;
 }
 
 .hero-content {
@@ -161,14 +162,14 @@ html {
 
 /* Fasilitas Section */
 .fasilitas {
-    padding: 5rem 0;
-    background: #ffffff;
+    padding: 4rem 0;
+    background: #f8f9fa;
 }
 
 .fasilitas h2 {
     text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
     color: #2d3436;
     font-weight: 700;
 }
@@ -185,45 +186,40 @@ html {
 
 .fasilitas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .fasilitas-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
     text-align: center;
-    padding: 2.5rem 2rem;
-    border-radius: 15px;
-    background: #f8f9fa;
-    border: 2px solid transparent;
-    transition: all 0.4s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e8e8e8;
 }
 
 .fasilitas-item:hover {
-    transform: translateY(-10px);
-    background: linear-gradient(135deg, #ffe8e8, #fff0f0);
-    border: 2px solid #c41e3a;
-    box-shadow: 0 15px 35px rgba(196, 30, 58, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #c41e3a;
 }
 
 .fasilitas-item i {
-    font-size: 3.5rem;
-    background: linear-gradient(135deg, #c41e3a, #8b0000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.fasilitas-item:hover i {
-    transform: scale(1.2);
+    font-size: 2rem;
+    color: #c41e3a;
+    margin-bottom: 0.8rem;
+    display: block;
 }
 
 .fasilitas-item p {
-    font-size: 1.05rem;
-    color: #2d3436;
-    font-weight: 500;
+    font-size: 0.9rem;
+    color: #636e72;
+    margin: 0;
+    line-height: 1.4;
 }
 
 /* Lokasi Section */
@@ -268,6 +264,14 @@ html {
     transition: all 0.3s ease;
     border-left: 5px solid #c41e3a;
 }
+
+    /* Reduce lokasi list box size for smaller screens */
+    .lokasi-list li {
+        padding: 1rem 1.2rem;
+        font-size: 1.05rem;
+        margin-bottom: 0.9rem;
+        border-left-width: 4px;
+    }
 
 .lokasi-list li:hover {
     transform: translateX(10px);
@@ -351,12 +355,13 @@ html {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 8rem 0 4rem;
-    background:url('../images/kantor-1.jpg') center/cover no-repeat;
+    justify-content: center;
+    padding: 0;
+    background: url('../images/kantor-1.jpg') center/cover no-repeat;
     position: relative;
     color: white;
-    background-attachment: fixed;
-    margin-top: 0; /* Ubah dari 60px menjadi 0 */
+    background-attachment: scroll;
+    margin-top: 0;
 }
 
 .kantor::before {
@@ -366,109 +371,88 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
 .kantor-overlay {
     position: relative;
     z-index: 2;
-    padding: 5rem;
+    padding: 3rem 2rem;
     text-align: center;
     width: 100%;
-    margin-top: -12rem; /* Geser ke atas 3rem, sesuaikan nilainya */
-}
-
-.kantor h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    font-weight: 700;
-}
-
-.kantor h2 span {
-    color: #cb1515;
-    text-decoration-thickness: 3px;
-}
-
-.kantor p {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-style: italic;
-    font-weight: 300;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .kantor-logo {
     width: 160px;
     height: auto;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
-    transition: transform 0.3s ease;
-
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.kantor-logo:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.kontak-info {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-}
-
-.kontak-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1rem 1.8rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 2.5rem;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
     transition: all 0.3s ease;
 }
 
-.kontak-item:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.kantor-logo:hover {
+    transform: scale(1.02);
 }
 
-.kontak-item i {
-    font-size: 1.8rem;
-    color: #cb1515;
+.kantor-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
 }
 
-.kontak-item p {
-    margin: 0;
-    font-size: 1.05rem;
-    font-weight: 500;
+.kantor-title span {
+    display: inline-block;
+    color: #ff3b3b;
+    font-weight: 700;
+}
+
+.kantor-tagline {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    font-style: italic;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-lihat {
-    display: inline-block;
-    padding: 1.2rem 3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1.2rem 2.5rem;
     background: linear-gradient(135deg, #c41e3a, #8b0000);
     color: #ffffff;
     text-decoration: none;
     border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    transition: all 0.4s;
-    box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-lihat i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
 }
 
 .btn-lihat:hover {
-    background: linear-gradient(135deg, #e67e22, #d68910);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(243, 156, 18, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     color: white;
+}
+
+.btn-lihat:hover i {
+    transform: scale(1.1);
 }
 
 /* Footer */
@@ -586,6 +570,22 @@ html {
     .footer-content {
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
+    }
+
+    /* Additional reduction at 480px */
+    .lokasi-list li {
+        padding: 0.95rem 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        border-left-width: 4px;
+    }
+
+    /* Tighter compact list for very small screens */
+    .lokasi-list li {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        border-left-width: 3px;
     }
     
     .footer-col:first-child {
@@ -979,4 +979,276 @@ html {
     }
 }
 
-/* ...existing code... */
+/* Fasilitas: Force 3 columns x multiple rows at specific breakpoints (768, 480, 360) */
+@media (max-width: 768px) {
+    .fasilitas-grid {
+        /* Force 3 columns so the grid becomes 3xN (rows will wrap as needed) */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem; /* Slightly smaller gap to fit columns */
+        padding: 0 10px; /* Reduce horizontal padding on smaller screens */
+    }
+
+    .fasilitas-item {
+        padding: 1rem; /* Slightly smaller padding to avoid overflow */
+        font-size: 0.95rem; /* Adjust font-size for better fit */
+    }
+    /* Shrink icon and copy inside fasilitas items at 768px */
+    .fasilitas-item i {
+        font-size: 1.6rem;
+    }
+    .fasilitas-item p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fasilitas-grid {
+        grid-template-columns: repeat(3, 1fr); /* keep 3 columns */
+        gap: 0.9rem;
+        padding: 0 8px;
+    }
+
+    .fasilitas-item {
+        padding: 0.9rem;
+        font-size: 0.92rem;
+    }
+    /* Shrink icon and copy inside fasilitas items at 480px */
+    .fasilitas-item i {
+        font-size: 1.3rem;
+    }
+    .fasilitas-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .fasilitas-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        padding: 0 6px;
+    }
+
+    .fasilitas-item {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    /* Shrink icon and copy inside fasilitas items at 360px */
+    .fasilitas-item i {
+        font-size: 1.1rem;
+    }
+    .fasilitas-item p {
+        font-size: 0.78rem;
+    }
+}
+
+/* Hero responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 0 2.5rem; /* reduce vertical padding */
+    }
+    .hero h1 {
+        font-size: 2.4rem; /* smaller heading */
+        margin-bottom: 1.4rem;
+    }
+    .hero-info {
+        gap: 10px;
+        margin-bottom: 1.6rem;
+    }
+    .info-box {
+        padding: 0.9rem 1.6rem;
+        font-size: 1rem;
+    }
+    .hero-image {
+        width: 90%;
+        max-width: 700px;
+    }
+    /* Only make hero-info (the three boxes) into a 3-column grid here */
+    .hero .hero-content > .hero-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto 1rem;
+        padding: 0 24px; /* spacing between boxes and screen edges */
+    }
+    .hero .hero-content > .hero-info .info-box { padding: 0.9rem 1rem; font-size: 0.95rem; width: 100%; box-sizing: border-box; }
+    .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 5rem 0 1.8rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .hero-info {
+        gap: 8px;
+        margin-bottom: 1.2rem;
+    }
+    .info-box {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    .hero-image {
+        width: 95%;
+        max-width: 580px;
+    }
+    /* Only make hero-info (the three boxes) into a 3-column grid here */
+    .hero .hero-content > .hero-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto 0.6rem;
+        padding: 0 16px; /* spacing */
+    }
+    .hero .hero-content > .hero-info .info-box { padding: 0.7rem 0.9rem; font-size: 0.9rem; width: 100%; box-sizing: border-box; }
+    .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        padding: 4.2rem 0 1.2rem;
+    }
+    .hero h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    .hero-info {
+        gap: 6px;
+        margin-bottom: 0.9rem;
+    }
+    .info-box {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .hero-image {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 14px;
+    }
+    /* Only make hero-info (the three boxes) into a 3-column grid here */
+    .hero .hero-content > .hero-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.4rem;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto 0.6rem;
+        padding: 0 10px; /* spacing */
+    }
+    .hero .hero-content > .hero-info .info-box { padding: 0.5rem 0.7rem; font-size: 0.78rem; width: 100%; box-sizing: border-box; }
+
+    /* Make text inside the info-box slightly smaller and better balanced */
+    .hero .hero-content > .hero-info .info-box { line-height: 1.15; }
+    .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
+}
+
+/* Responsive grid for Kantor section */
+@media (max-width: 768px) {
+    .kantor {
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .kantor-overlay {
+        padding: 2rem 1.5rem;
+    }
+
+    .kantor-logo {
+        width: 130px;
+        margin-bottom: 2rem;
+    }
+
+    .kantor-title {
+        font-size: 2.4rem;
+        margin-bottom: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+
+    .kantor-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn-lihat {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        gap: 8px;
+    }
+    
+    .btn-lihat i {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .kantor {
+        min-height: 100vh;
+    }
+
+    .kantor-overlay {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .kantor-logo {
+        width: 110px;
+        margin-bottom: 1.5rem;
+    }
+
+    .kantor-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .kantor-tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 10px;
+    }
+
+    .btn-lihat {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+        gap: 8px;
+    }
+    
+    .btn-lihat i {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .kantor-overlay {
+        padding: 1.5rem 1rem;
+    }
+
+    .kantor-logo {
+        width: 95px;
+        margin-bottom: 1.2rem;
+    }
+
+    .kantor-title {
+        font-size: 1.6rem;
+    }
+
+    .kantor-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .btn-lihat {
+        padding: 0.8rem 1.6rem;
+        font-size: 0.9rem;
+    }
+}
