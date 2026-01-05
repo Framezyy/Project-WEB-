@@ -24,11 +24,10 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    overflow-x: hidden;
+    padding: 0 20px;    overflow-x: hidden;
 }
 
-/* /* Navbar Styles */
+/* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -36,6 +35,7 @@ html {
     right: 0;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.98);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 15px 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -81,9 +81,10 @@ html {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 4rem;
+    padding: 6rem 0 4rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
-    margin-top: 60px;
+    margin-top: 0;
+    scroll-margin-top: 0;
 }
 
 .hero-content {
@@ -354,12 +355,13 @@ html {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 8rem 0 4rem;
-    background:url('../images/kantor-1.jpg') center/cover no-repeat;
+    justify-content: center;
+    padding: 0;
+    background: url('../images/kantor-1.jpg') center/cover no-repeat;
     position: relative;
     color: white;
-    background-attachment: fixed;
-    margin-top: 0; /* Ubah dari 60px menjadi 0 */
+    background-attachment: scroll;
+    margin-top: 0;
 }
 
 .kantor::before {
@@ -369,109 +371,88 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
 .kantor-overlay {
     position: relative;
     z-index: 2;
-    padding: 5rem;
+    padding: 3rem 2rem;
     text-align: center;
     width: 100%;
-    margin-top: -12rem; /* Geser ke atas 3rem, sesuaikan nilainya */
-}
-
-.kantor h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    font-weight: 700;
-}
-
-.kantor h2 span {
-    color: #cb1515;
-    text-decoration-thickness: 3px;
-}
-
-.kantor p {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-style: italic;
-    font-weight: 300;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .kantor-logo {
     width: 160px;
     height: auto;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
-    transition: transform 0.3s ease;
-
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.kantor-logo:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.kontak-info {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-}
-
-.kontak-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1rem 1.8rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 2.5rem;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
     transition: all 0.3s ease;
 }
 
-.kontak-item:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.kantor-logo:hover {
+    transform: scale(1.02);
 }
 
-.kontak-item i {
-    font-size: 1.8rem;
-    color: #cb1515;
+.kantor-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
 }
 
-.kontak-item p {
-    margin: 0;
-    font-size: 1.05rem;
-    font-weight: 500;
+.kantor-title span {
+    display: inline-block;
+    color: #ff3b3b;
+    font-weight: 700;
+}
+
+.kantor-tagline {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    font-style: italic;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-lihat {
-    display: inline-block;
-    padding: 1.2rem 3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1.2rem 2.5rem;
     background: linear-gradient(135deg, #c41e3a, #8b0000);
     color: #ffffff;
     text-decoration: none;
     border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    transition: all 0.4s;
-    box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-lihat i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
 }
 
 .btn-lihat:hover {
-    background: linear-gradient(135deg, #e67e22, #d68910);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(243, 156, 18, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     color: white;
+}
+
+.btn-lihat:hover i {
+    transform: scale(1.1);
 }
 
 /* Footer */
@@ -1173,180 +1154,101 @@ html {
     .hero .hero-content > .hero-info .info-box i { font-size: 0.5rem; }
 }
 
-/* Responsive grid for Kantor section: align contact items and CTA in a 3-column row on small widths */
+/* Responsive grid for Kantor section */
 @media (max-width: 768px) {
     .kantor {
-        padding: 6.5rem 0 3rem; /* slightly smaller vertical spacing */
+        padding: 0;
+        min-height: 100vh;
     }
 
     .kantor-overlay {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
-        gap: 12px;
-        align-items: center;
-        justify-items: center;
-        padding: 2rem 1rem; /* more compact padding */
-        width: 100%;
-        margin-top: -8rem; /* move overlay up a bit less on smaller screens */
+        padding: 2rem 1.5rem;
     }
 
-    /* Logo centered at the top column */
     .kantor-logo {
-        grid-column: 1 / -1;
-        grid-row: 1;
-        width: 140px;
-        margin: 0; /* avoid large spacing */
-        padding: 12px;
+        width: 130px;
+        margin-bottom: 2rem;
     }
 
-    .kantor h2 {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        font-size: 2rem;
-        margin-bottom: 0.6rem;
+    .kantor-title {
+        font-size: 2.4rem;
+        margin-bottom: 1.4rem;
+        letter-spacing: 0.5px;
     }
 
-    .kantor p {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        font-size: 1rem;
-        margin-bottom: 0.6rem;
+    .kantor-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
 
-    /* Kontak info (address + WhatsApp) become 2-column grid; CTA will be below */
-    .kontak-info {
-        grid-column: 1 / -1;
-        grid-row: 4;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        justify-items: center;
-        align-items: center;
-        width: 100%;
-        padding: 0 10px; /* keep some spacing */
-    }
-
-    .kontak-item {
-        background: rgba(255, 255, 255, 0.15);
-        padding: 10px 12px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 420px;
-        box-sizing: border-box;
-    }
-    .kontak-item i { font-size: 1.2rem; color: #cb1515; margin-right: 8px; }
-    .kontak-item p { font-size: 1rem; margin: 0; }
-
-    /* CTA below contact boxes, centered */
     .btn-lihat {
-        grid-column: 1 / -1;
-        grid-row: 5;
-        justify-self: center;
-        padding: 0.9rem 2rem;
+        padding: 1rem 2rem;
         font-size: 1rem;
-        border-radius: 12px;
-        margin-top: 8px;
+        gap: 8px;
+    }
+    
+    .btn-lihat i {
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
     .kantor {
-        padding: 5.5rem 0 2.2rem;
+        min-height: 100vh;
     }
 
     .kantor-overlay {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 1.2rem 8px;
-        margin-top: -7rem;
+        padding: 1.8rem 1.2rem;
     }
 
     .kantor-logo {
-        grid-column: 1 / -1;
-        width: 120px;
+        width: 110px;
+        margin-bottom: 1.5rem;
     }
 
-    .kantor h2 {
-        font-size: 1.8rem;
+    .kantor-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
-    .kantor p {
-        font-size: 0.95rem;
+    .kantor-tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 10px;
     }
-
-    .kontak-info {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        padding: 0 8px;
-    }
-
-    .kontak-item {
-        padding: 8px 10px;
-        font-size: 0.95rem;
-    }
-    .kontak-item i { font-size: 1.05rem; }
-    .kontak-item p { font-size: 0.95rem; }
 
     .btn-lihat {
-        padding: 0.8rem 1.6rem;
+        padding: 0.9rem 1.8rem;
         font-size: 0.95rem;
-        grid-row: 5;
-        grid-column: 1 / -1;
-        justify-self: center;
+        gap: 8px;
+    }
+    
+    .btn-lihat i {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 360px) {
-    .kantor {
-        padding: 4.5rem 0 1.5rem;
-    }
-
     .kantor-overlay {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        padding: 10px;
-        margin-top: -6rem;
+        padding: 1.5rem 1rem;
     }
 
     .kantor-logo {
-        grid-column: 1 / -1;
-        width: 110px;
+        width: 95px;
+        margin-bottom: 1.2rem;
     }
 
-    .kantor h2 {
-        font-size: 1.4rem;
+    .kantor-title {
+        font-size: 1.6rem;
     }
 
-    .kantor p {
+    .kantor-tagline {
         font-size: 0.9rem;
+        margin-bottom: 1.2rem;
     }
-
-    .kontak-info {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
-        padding: 0 6px;
-    }
-
-    .kontak-item {
-        padding: 6px 8px;
-        font-size: 0.82rem;
-    }
-    .kontak-item i { font-size: 0.95rem; }
-    .kontak-item p { font-size: 0.82rem; }
 
     .btn-lihat {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
-        grid-row: 5;
-        grid-column: 1 / -1;
-        justify-self: center;
+        padding: 0.8rem 1.6rem;
+        font-size: 0.9rem;
     }
 }
