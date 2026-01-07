@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Serve Project-WEB (PHP built-in server)",
+			"command": "php -S localhost:8000 -t .",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
