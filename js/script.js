@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeSlider(slider) {
+    // Matikan auto slider (autoplay)
+    const AUTO_PLAY = false;
+
     const slides = Array.from(slider.querySelectorAll('.slide'));
     const dots = Array.from(slider.querySelectorAll('.dot'));
     const prevBtn = slider.querySelector('.prev-btn');
@@ -43,6 +46,7 @@ function initializeSlider(slider) {
     };
 
     const startAuto = () => {
+        if (!AUTO_PLAY) return;
         stopAuto();
         autoId = setInterval(() => changeSlide(1), 5000);
     };
@@ -53,6 +57,7 @@ function initializeSlider(slider) {
     };
 
     const resetAuto = () => {
+        if (!AUTO_PLAY) return;
         stopAuto();
         startAuto();
     };
@@ -64,7 +69,7 @@ function initializeSlider(slider) {
     // Dots
     dots.forEach((dot, idx) => dot.addEventListener('click', () => goTo(idx)));
 
-    // Pause and resume on hover
+    // Pause and resume on hover (tetap aman; kalau AUTO_PLAY=false tidak melakukan apa-apa)
     slider.addEventListener('mouseenter', stopAuto);
     slider.addEventListener('mouseleave', startAuto);
 

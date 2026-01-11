@@ -373,7 +373,7 @@ html {
     align-items: center;
     justify-content: center;
     padding: 0;
-    background: url('../images/kantor-1.jpg') center/cover no-repeat;
+    background: url('../images/kantor.png') center/cover no-repeat;
     position: relative;
     color: white;
     background-attachment: scroll;
@@ -776,7 +776,7 @@ html {
 /* Image Slider Styles */
 .image-slider {
     position: relative;
-    max-width: 900px;
+    max-width: 850px;
     margin: 3rem auto 0;
     overflow: hidden;
 }
